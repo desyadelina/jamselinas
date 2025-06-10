@@ -1,7 +1,7 @@
-<section class="bg-gradient-to-b from-jamselinas-gradient-mid to-jamselinas-cream py-16">
+<section class="bg-gradient-to-b from-jamselinas-gradient-mid to-jamselinas-white py-16">
     <div class="container mx-auto">
         <div class="text-center mb-12">
-            <h2 class="font-bold text-3xl lg:text-5xl text-jamselinas-primary mb-8">ABOUT US</h2>
+            <h2 class="font-bold font-poppins text-3xl lg:text-5xl text-jamselinas-primary mb-8">ABOUT US</h2>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-8 lg:gap-6">
             <!-- images section -->
@@ -20,8 +20,8 @@
                 </div>
             </div>
             <!-- text Section -->
-            <div class="flex flex-col gap-6">
-                <p class="text-lg lg:text-2xl text-justify leading-relaxed">
+            <div class="flex flex-col gap-6 font-inter">
+                <p class="text-lg lg:text-[30px] text-justify leading-relaxed">
                     <span class="font-bold">JAMSELINAS</span> (Jambore Sepeda Lipat Nasional) adalah event silaturrahmi
                     bagi
                     para pecinta sepeda lipat di Indonesia, digagas dan diadakan oleh Indonesia Folding Bike (IDFB) yang
@@ -29,7 +29,7 @@
                     untuk
                     keberadaannya.
                 </p>
-                <p class="text-lg lg:text-2xl text-justify leading-relaxed lg:ml-16">
+                <p class="text-lg lg:text-[30px] text-justify leading-relaxed lg:ml-16">
                     Jamselinas dalam penamaan event tahunan ini dilindungi oleh produk hukum sebagaimana yang terdaftar
                     pada
                     Surat Referensi Label Merek Direktorat Kekayaan Intelektual Kementerian Hukum dan HAM Republik
@@ -38,7 +38,7 @@
                     terselenggara sebanyak 12 kali dan tahun ini akan diadakan di Kota Malang dengan komunitas Ngalam
                     Folding Bike (NFB) sebagai penyelenggaranya.
                 </p>
-                <p class="text-lg lg:text-2xl text-justify leading-relaxed lg:ml-16">
+                <p class="text-lg lg:text-[30px] text-justify leading-relaxed lg:ml-16">
                     Tujuan event ini adalah untuk mensosialisasikan penggunaan sepeda sebagai alat transportasi yang
                     sehat
                     dan ramah lingkungan serta mendukung pariwisata dan ekonomi kreatif di Indonesia. Kota Malang telah

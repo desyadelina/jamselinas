@@ -14,6 +14,7 @@
             --color-jamselinas-primary: #0B74B9;
             --color-jamselinas-secondary: #346E97;
             --color-jamselinas-cream: #FFF8EE;
+            --color-jamselinas-white: #FCFEFF;
             --color-jamselinas-footer: #B9D9F2;
             --color-jamselinas-text: #0C5F96;
             --color-jamselinas-gradient-start: #FFEDD4;
@@ -28,9 +29,9 @@
     </style>
 </head>
 
-<body class="bg-jamselinas-cream font-inter text-jamselinas-text">
+<body class="bg-jamselinas-white font-inter text-jamselinas-text">
     @include('layouts._navbar')
-    <main>
+    <main class="mt-16 mb-16">
         @yield('content')
     </main>
     @include('layouts._footer')

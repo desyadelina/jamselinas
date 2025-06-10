@@ -1,9 +1,11 @@
 <footer class="w-full bg-jamselinas-footer py-8">
     <div class="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div class="flex flex-col items-center lg:items-start">
-            <div
-                class="w-48 h-32 bg-gradient-to-br from-jamselinas-primary to-jamselinas-secondary rounded-lg flex items-center justify-center text-white font-bold text-2xl mb-4">
-                JAMSELINAS</div>
+            <img 
+                src="{{ asset('images/large_nobg_logo.png') }}" 
+                alt="JAMSELINAS Logo" 
+                class="w-[308.17px] object-contain rounded-lg mb-4"
+            >
             <p class="text-black text-center lg:text-left max-w-xs">
                 <span class="font-normal">Banjarmasin Tuan Rumah </span>
                 <span class="font-bold">JAMSELINAS IX 2025</span>

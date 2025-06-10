@@ -1,6 +1,6 @@
 <section class="container mx-auto py-16">
     <div class="text-center mb-12">
-        <h2 class="font-bold text-3xl lg:text-5xl text-jamselinas-primary">RIDERS STORY</h2>
+        <h2 class="font-bold font-poppins text-3xl lg:text-5xl text-jamselinas-primary">RIDERS STORY</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         @for ($i = 1; $i <= 3; $i++)
