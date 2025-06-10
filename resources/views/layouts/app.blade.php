@@ -20,9 +20,10 @@
             --color-jamselinas-gradient-mid: #B2D5F2;
             --color-jamselinas-gradient-end: #B6D7F1;
 
-            --font-family-inter: Inter, sans-serif;
-            --font-family-poppins: Poppins, sans-serif;
-            --font-family-roboto: Roboto, sans-serif;
+            --font-sans: Inter, system-ui, sans-serif;
+            --font-inter: Inter, system-ui, sans-serif;
+            --font-poppins: Poppins, system-ui, sans-serif;
+            --font-roboto: Roboto, system-ui, sans-serif;
         }
     </style>
 </head>
