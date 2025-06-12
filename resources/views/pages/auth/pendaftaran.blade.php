@@ -30,7 +30,7 @@
                         E-mail <span class="text-red-500">*</span>
                     </label>
                     <input type="email" id="email" name="email" placeholder="contoh@email.com" required
-                        autocomplete="off"
+                        
                         class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     @error('email')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -42,7 +42,7 @@
                     <label for="name" class="block mb-2 text-xl font-medium text-black">
                         Nama <span class="text-red-500">*</span>
                     </label>
-                    <input type="text" id="name" name="name" required autocomplete="off"
+                    <input type="text" id="name" name="name" required 
                         class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     @error('name')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -81,7 +81,7 @@
                             <span
                                 class="absolute left-3 top-1/2 transform -translate-y-1/2 text-lg font-bold text-gray-700 bg-gray-100 px-2 rounded">+62</span>
                             <input type="tel" id="phone" name="phone" placeholder="812-3456-7890" required
-                                autocomplete="off"
+                                
                                 class="w-full pl-16 pr-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         </div>
                         @error('phone')
@@ -97,7 +97,7 @@
                                 class="absolute left-3 top-1/2 transform -translate-y-1/2 text-lg font-bold text-gray-700 bg-gray-100 px-2 rounded">
                                 +62
                             </span>
-                            <input type="tel" id="emergency_phone" name="emergency_phone" required autocomplete="off"
+                            <input type="tel" id="emergency_phone" name="emergency_phone" required 
                                 class="w-full pl-16 pr-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         </div>
                         @error('emergency_phone')
@@ -112,7 +112,7 @@
                         <label for="birth_place" class="block mb-2 text-xl font-medium text-black">
                             Tempat Lahir <span class="text-red-500">*</span>
                         </label>
-                        <input type="text" id="birth_place" name="birth_place" required autocomplete="off"
+                        <input type="text" id="birth_place" name="birth_place" required 
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         @error('birth_place')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -122,7 +122,7 @@
                         <label for="birth_date" class="block mb-2 text-xl font-medium text-black">
                             Tanggal Lahir <span class="text-red-500">*</span>
                         </label>
-                        <input type="date" id="birth_date" name="birth_date" required autocomplete="off"
+                        <input type="date" id="birth_date" name="birth_date" required 
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         @error('birth_date')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -137,7 +137,7 @@
                             Jenis Kelamin
                         </label>
                         <div class="relative">
-                            <select id="gender" name="gender" autocomplete="off"
+                            <select id="gender" name="gender" 
                                 class="w-full px-4 py-3 pr-10 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 appearance-none">
                                 <option value="">Pilih Jenis Kelamin</option>
                                 <option value="laki-laki">Laki-laki</option>
@@ -159,7 +159,7 @@
                             Golongan Darah
                         </label>
                         <div class="relative">
-                            <select id="blood_type" name="blood_type" autocomplete="off"
+                            <select id="blood_type" name="blood_type" 
                                 class="w-full px-4 py-3 pr-10 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 appearance-none">
                                 <option value="">Pilih Golongan Darah</option>
                                 <option value="A">A</option>
@@ -182,7 +182,7 @@
                     <label for="nationality" class="block mb-2 text-xl font-medium text-black">
                         Negara Asal(domisili bagi WNI)/Kewarganegaraan <span class="text-red-500">*</span>
                     </label>
-                    <input type="text" id="nationality" name="nationality" required autocomplete="off"
+                    <input type="text" id="nationality" name="nationality" required 
                         class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     @error('nationality')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -196,7 +196,7 @@
                             Provinsi
                         </label>
                         <input type="text" id="province" name="province" placeholder="Kalimantan Selatan"
-                            autocomplete="off"
+                            
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         @error('province')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -206,7 +206,7 @@
                         <label for="city" class="block mb-2 text-xl font-medium text-black">
                             Kota / Kabupaten
                         </label>
-                        <input type="text" id="city" name="city" placeholder="Banjarbaru" autocomplete="off"
+                        <input type="text" id="city" name="city" placeholder="Banjarbaru" 
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         @error('city')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -220,7 +220,7 @@
                             Kecamatan
                         </label>
                         <input type="text" id="district" name="district" placeholder="Banjarbaru Selatan"
-                            autocomplete="off"
+                            
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     </div>
                     <div>
@@ -228,7 +228,7 @@
                             Kelurahan / Desa
                         </label>
                         <input type="text" id="village" name="village" placeholder="Guntung Manggis"
-                            autocomplete="off"
+                            
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     </div>
                 </div>
@@ -238,7 +238,7 @@
                     <label for="address" class="block mb-2 text-xl font-medium text-black">
                         Alamat Lengkap
                     </label>
-                    <textarea id="address" name="address" rows="3" autocomplete="off"
+                    <textarea id="address" name="address" rows="3" 
                         class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"></textarea>
                 </div>
 
@@ -248,14 +248,14 @@
                         <label for="postal_code" class="block mb-2 text-xl font-medium text-black">
                             Kode Pos
                         </label>
-                        <input type="text" id="postal_code" name="postal_code" autocomplete="off"
+                        <input type="text" id="postal_code" name="postal_code" 
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     </div>
                     <div>
                         <label for="bike_type" class="block mb-2 text-xl font-medium text-black">
                             Jenis Sepeda <span class="text-red-500">*</span>
                         </label>
-                        <input type="text" id="bike_type" name="bike_type" required autocomplete="off"
+                        <input type="text" id="bike_type" name="bike_type" required 
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         @error('bike_type')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -270,7 +270,7 @@
                             Instagram
                         </label>
                         <input type="text" id="instagram" name="instagram" placeholder="@username"
-                            autocomplete="off"
+                            
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     </div>
                     <div>
@@ -278,7 +278,7 @@
                             Ukuran Jersey <span class="text-red-500">*</span>
                         </label>
                         <div class="relative">
-                            <select id="jersey_size" name="jersey_size" required autocomplete="off"
+                            <select id="jersey_size" name="jersey_size" required 
                                 class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 appearance-none">
                                 <option value="">Pilih Ukuran</option>
                                 <option value="S">S</option>
@@ -292,7 +292,7 @@
                                 <option value="6XL">6XL</option>
                             </select>
                             {{-- KALAU PAKAI INPUT FIELD TEXT --}}
-                            {{-- <input type="text" id="jersey_size" name="jersey_size" required autocomplete="off"
+                            {{-- <input type="text" id="jersey_size" name="jersey_size" required 
                                 class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" /> --}}
                             {{-- KALAU PAKAI INPUT FIELD TEXT, DISABLE SPAN DIBAWAH INI --}}
                             <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
@@ -315,7 +315,7 @@
                             Ukuran add on Kaos Katun yang dibeli
                         </label>
                         <div class="relative">
-                            <select id="cotton_shirt_size" name="cotton_shirt_size" required autocomplete="off"
+                            <select id="cotton_shirt_size" name="cotton_shirt_size" required 
                                 class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 appearance-none">
                                 <option value="">Pilih Ukuran</option>
                                 <option value="S">S</option>
@@ -329,7 +329,7 @@
                                 <option value="6XL">6XL</option>
                             </select>
                             {{-- KALAU PAKAI INPUT FIELD TEXT --}}
-                            {{-- <input type="text" id="cotton_shirt_size" name="cotton_shirt_size" required autocomplete="off"
+                            {{-- <input type="text" id="cotton_shirt_size" name="cotton_shirt_size" required 
                                     class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" /> --}}
                             {{-- KALAU PAKAI INPUT FIELD TEXT, DISABLE SPAN DIBAWAH INI  --}}
                             <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
@@ -345,14 +345,14 @@
                             Warna add on kaos katun merchandise yang dibeli (putih / biru)
                         </label>
                         <div class="relative">
-                            <select id="cotton_shirt_color" name="cotton_shirt_color" autocomplete="off"
+                            <select id="cotton_shirt_color" name="cotton_shirt_color" 
                                 class="w-full px-4 py-3 pr-10 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 appearance-none">
                                 <option value="">Pilih Warna</option>
                                 <option value="putih">Putih</option>
                                 <option value="biru">Biru</option>
                             </select>
                             {{-- KALAU PAKAI INPUT FIELD TEXT --}}
-                            {{-- <input type="text" id="cotton_shirt_size" name="cotton_shirt_size" required autocomplete="off"
+                            {{-- <input type="text" id="cotton_shirt_size" name="cotton_shirt_size" required 
                                 class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" /> --}}
                             {{-- KALAU PAKAI INPUT FIELD TEXT, DISABLE SPAN DIBAWAH INI  --}}
                             <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
@@ -372,14 +372,14 @@
                             Dari Komunitas mana anda berasal?
                         </label>
                         <input type="text" id="community" name="community" placeholder="Nama komunitas sepeda"
-                            autocomplete="off"
+                            
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     </div>
                     <div>
                         <label for="bike_model" class="block mb-2 text-xl font-medium text-black">
                             Sepeda apa yang anda gunakan?
                         </label>
-                        <input type="text" id="bike_model" name="bike_model" autocomplete="off"
+                        <input type="text" id="bike_model" name="bike_model" 
                             placeholder="Contoh: Brompton, Dahon, dll"
                             class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                     </div>
@@ -426,7 +426,7 @@
                         Kode Voucher
                     </label>
                     <div class="flex gap-2">
-                        <input type="text" id="voucher" name="voucher" autocomplete="off"
+                        <input type="text" id="voucher" name="voucher" 
                             placeholder="Masukkan kode voucher (opsional)"
                             class="flex-1 px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         <button type="button" id="apply-voucher"
