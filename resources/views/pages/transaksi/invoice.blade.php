@@ -84,11 +84,99 @@
                 </div>
 
                 <!-- payment button -->
-                <button type="button"
-                    class="w-full mt-8 px-6 py-4 text-xl font-semibold text-white bg-jamselinas-secondary border-2 border-jamselinas-secondary rounded-lg transition-all duration-200 shadow-lg hover:bg-white hover:text-jamselinas-secondary hover:border-jamseltext-jamselinas-secondary focus:bg-white focus:text-jamselinas-secondary focus:border-jamseltext-jamselinas-secondary focus:outline-none focus:ring-4 focus:ring-jamseltext-jamselinas-secondary focus:ring-offset-2 cursor-pointer"
+                <button type="button" onclick="openPaymentModal()"
+                    class="w-full mt-8 px-6 py-4 text-xl font-semibold text-white bg-jamselinas-secondary border-2 border-jamselinas-secondary rounded-lg transition-all duration-200 shadow-lg hover:bg-white hover:text-jamselinas-secondary hover:border-jamselinas-secondary focus:bg-white focus:text-jamselinas-secondary focus:border-jamselinas-secondary focus:outline-none focus:ring-4 focus:ring-jamselinas-secondary focus:ring-offset-2 cursor-pointer"
                     aria-label="Lanjutkan ke pembayaran dengan total bayaran tersebut">
                     Bayar Sekarang
                 </button>
+
+                @include('components.modals.payment-method')
+                @include('components.modals.payment-qr')
+
+                <script>
+                    function openPaymentModal() {
+                        const modal = document.getElementById('paymentMethodModal');
+                        const content = document.getElementById('paymentModalContent');
+
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+
+                        setTimeout(() => {
+                            content.classList.remove('scale-95', 'opacity-0');
+                            content.classList.add('scale-100', 'opacity-100');
+                        }, 10);
+                    }
+
+                    function closePaymentModal() {
+                        const modal = document.getElementById('paymentMethodModal');
+                        const content = document.getElementById('paymentModalContent');
+
+                        content.classList.remove('scale-100', 'opacity-100');
+                        content.classList.add('scale-95', 'opacity-0');
+
+                        setTimeout(() => {
+                            modal.classList.add('hidden');
+                            modal.classList.remove('flex');
+                        }, 200);
+                    }
+
+                    function selectBankKalsel() {
+                        closePaymentModal();
+
+                        setTimeout(() => {
+                            openPaymentQRModal();
+                        }, 800);
+                    }
+
+                    function openPaymentQRModal() {
+                        const modal = document.getElementById('paymentQRModal');
+                        const content = document.getElementById('qrModalContent');
+
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+
+                        setTimeout(() => {
+                            content.classList.remove('scale-95', 'opacity-0');
+                            content.classList.add('scale-100', 'opacity-100');
+                        }, 10);
+                    }
+
+                    function closePaymentQRModal() {
+                        const modal = document.getElementById('paymentQRModal');
+                        const content = document.getElementById('qrModalContent');
+
+                        content.classList.remove('scale-100', 'opacity-100');
+                        content.classList.add('scale-95', 'opacity-0');
+
+                        setTimeout(() => {
+                            modal.classList.add('hidden');
+                            modal.classList.remove('flex');
+                            window.location.href = "{{ route('landing') }}";
+                        }, 200);
+                    }
+
+                    // close modal kalo user clicking outside
+                    document.addEventListener('click', function(event) {
+                        const paymentModal = document.getElementById('paymentMethodModal');
+                        const qrModal = document.getElementById('paymentQRModal');
+
+                        if (event.target === paymentModal) {
+                            closePaymentModal();
+                        }
+
+                        if (event.target === qrModal) {
+                            closePaymentQRModal();
+                        }
+                    });
+
+                    // close modal pake esc key
+                    document.addEventListener('keydown', function(event) {
+                        if (event.key === 'Escape') {
+                            closePaymentModal();
+                            closePaymentQRModal();
+                        }
+                    });
+                </script>
             </section>
         </div>
     </main>
