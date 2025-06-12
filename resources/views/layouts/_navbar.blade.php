@@ -42,9 +42,9 @@
                 Story</a>
             <a href="{{ route('landing') }}#gallery"
                 class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">Gallery</a>
-            <a href="{{ route('form.pendaftaran') }}"
+            <a href="{{ route('form.login') }}"
                 class="inline-flex items-center justify-center px-6 py-2 rounded-xl border border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-roboto text-lg transition-colors duration-200 mt-2">
-                Daftar
+                Masuk
             </a>
         </nav>
     </div>
