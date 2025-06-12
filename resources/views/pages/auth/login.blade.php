@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="flex items-center justify-center min-h-screen p-4">
-        <div class="w-full max-w-md">
+        <div class="w-full max-w-lg">
             <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-8 space-y-8">
                 <div class="text-center">
                     <img src="{{ asset('images/small_logo.png') }}" alt="JAMSELINAS Logo"
