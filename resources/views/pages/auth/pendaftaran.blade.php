@@ -430,7 +430,7 @@
                             placeholder="Masukkan kode voucher (opsional)"
                             class="flex-1 px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
                         <button type="button" id="apply-voucher"
-                            class="px-6 py-3 text-lg font-bold text-white text-white bg-[#0B74B9] border-2 border-[#0B74B9] rounded-lg transition-all duration-200 shadow-lg hover:bg-white hover:text-[#0B74B9] hover:border-[#0B74B9] focus:bg-white focus:text-[#0B74B9] focus:border-[#0B74B9] focus:outline-none focus:ring-4 focus:ring-[#0B74B9] focus:ring-offset-2 cursor-pointer">
+                            class="px-6 py-3 text-lg font-bold text-white bg-[#0B74B9] border-2 border-[#0B74B9] rounded-lg transition-all duration-200 shadow-lg hover:bg-white hover:text-[#0B74B9] hover:border-[#0B74B9] focus:bg-white focus:text-[#0B74B9] focus:border-[#0B74B9] focus:outline-none focus:ring-4 focus:ring-[#0B74B9] focus:ring-offset-2 cursor-pointer">
                             Apply
                         </button>
                     </div>

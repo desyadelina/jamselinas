@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+    --color-jamselinas-primary: #0B74B9;
+    --color-jamselinas-secondary: #346E97;
+    --color-jamselinas-cream: #FFF8EE;
+    --color-jamselinas-white: #FCFEFF;
+    --color-jamselinas-footer: #B9D9F2;
+    --color-jamselinas-text: #0C5F96;
+    --color-jamselinas-gradient-start: #FFEDD4;
+    --color-jamselinas-gradient-mid: #B2D5F2;
+    --color-jamselinas-gradient-end: #B6D7F1;
+
+    --font-family-inter: Inter, system-ui, sans-serif;
+    --font-family-poppins: Poppins, system-ui, sans-serif;
+    --font-family-roboto: Roboto, system-ui, sans-serif;
+}
