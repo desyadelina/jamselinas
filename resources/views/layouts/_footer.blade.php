@@ -17,10 +17,10 @@
                 <div class="flex flex-col gap-2 text-[22px]">
                     <ul class="list-disc list-inside text-black">
                         <li>
-                            <a href="#" class="hover:text-jamselinas-primary">Home</a>
+                            <a href="{{ route('landing') }}#hero" class="hover:text-jamselinas-primary">Home</a>
                         </li>
                         <li>
-                            <a href="#" class="hover:text-jamselinas-primary">Event Guide</a>
+                            <a href="{{ route('event-guide') }}" class="hover:text-jamselinas-primary">Event Guide</a>
                         </li>
                         <li>
                             <a href="#" class="hover:text-jamselinas-primary">News</a>
@@ -57,4 +57,45 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // smooth scroll buat footer anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerLinks = document.querySelectorAll('footer a[href*="#"]');
+
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    const currentPage = window.location.pathname;
+
+                    // kalo semisal link contains # dan kita di halaman yang sama, maka:
+                    if (href.includes('#')) {
+                        const [page, section] = href.split('#');
+
+                        // check kalo semisal kita di landing page (either/or empty)
+                        const isOnLandingPage = currentPage === '/' || currentPage === '';
+                        const targetPage = page.replace(window.location.origin, '');
+                        const isTargetLandingPage = !targetPage || targetPage === '/' || targetPage
+                            .includes('landing');
+
+                        // kalo semisal kita udah di landing page dan targetnya juga di landing page
+                        if (isOnLandingPage && isTargetLandingPage) {
+                            e.preventDefault();
+                            const targetElement = document.getElementById(section);
+                            if (targetElement) {
+                                const headerHeight = 96; // h-24 = 96px
+                                const targetPosition = targetElement.offsetTop - headerHeight;
+
+                                window.scrollTo({
+                                    top: targetPosition,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                        // kalo kita ga lagi di landing page, let it navigate normally to landing page with anchor
+                    }
+                });
+            });
+        });
+    </script>
 </footer>
