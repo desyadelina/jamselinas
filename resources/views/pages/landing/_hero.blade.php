@@ -13,7 +13,7 @@
                 </button>
             </a>
         </div>
-        <div class="flex-1 flex justify-center">
+        <div class="hidden lg:flex flex-1 justify-center">
             <div class="w-[865px] flex items-center justify-center">
                 <img src="{{ asset('images/large_nobg_logo.png') }}" alt="JAMSELINAS Logo"
                     class="max-h-full max-w-full object-contain" />
