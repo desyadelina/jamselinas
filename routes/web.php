@@ -32,3 +32,10 @@ Route::get('/pendaftaran/invoice', function () {
 Route::get('/event-guide', [EventGuide::class, 'index'])->name('event-guide');
 Route::get('/layanan-kami', [LayananKami::class, 'index'])->name('layanan-kami');
 Route::get('/hubungi-kami', [HubungiKami::class, 'index'])->name('hubungi-kami');
+
+
+
+// ini fallback route buat ngecatch semua route yang tidak ditemukan
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
