@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pendaftaran;
 use App\Http\Controllers\Auth;
+use App\Http\Controllers\EventGuide;
+use App\Http\Controllers\LayananKami;
+use App\Http\Controllers\HubungiKami;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +24,7 @@ Route::get('/', function () {
 
 Route::get('/login', [Auth::class, 'index'])->name('form.login');
 Route::get('/pendaftaran', [Pendaftaran::class, 'index'])->name('form.pendaftaran');
+
+Route::get('/event-guide', [EventGuide::class, 'index'])->name('event-guide');
+Route::get('/layanan-kami', [LayananKami::class, 'index'])->name('layanan-kami');
+Route::get('/hubungi-kami', [HubungiKami::class, 'index'])->name('hubungi-kami');

@@ -6,16 +6,17 @@
             </a>
         </div>
         <nav class="hidden lg:flex gap-18">
-            <a href="{{ route('landing') }}#hero"
+            <a href="{{ route('landing') }}"
                 class="text-jamselinas-primary font-roboto text-[30px] hover:text-jamselinas-secondary transition">Home</a>
-            <a href="{{ route('landing') }}#about"
-                class="text-jamselinas-primary font-roboto text-[30px] hover:text-jamselinas-secondary transition">About
-                Us</a>
-            <a href="{{ route('landing') }}#riders"
-                class="text-jamselinas-primary font-roboto text-[30px] hover:text-jamselinas-secondary transition">Riders
-                Story</a>
-            <a href="{{ route('landing') }}#gallery"
-                class="text-jamselinas-primary font-roboto text-[30px] hover:text-jamselinas-secondary transition">Gallery</a>
+            <a href="{{ route('event-guide') }}"
+                class="text-jamselinas-primary font-roboto text-[30px] hover:text-jamselinas-secondary transition">Event
+                Guide</a>
+            <a href="{{ route('layanan-kami') }}"
+                class="text-jamselinas-primary font-roboto text-[30px] hover:text-jamselinas-secondary transition">Layanan
+                Kami</a>
+            <a href="{{ route('hubungi-kami') }}"
+                class="text-jamselinas-primary font-roboto text-[30px] hover:text-jamselinas-secondary transition">Hubungi
+                Kami</a>
         </nav>
         <a href="{{ route('form.login') }}"
             class="hidden lg:flex items-center px-6 py-2 rounded-xl border border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-roboto text-[25px] cursor-pointer shadow transition-colors duration-200">
@@ -32,16 +33,17 @@
     <!-- Mobile Menu -->
     <div class="lg:hidden hidden bg-white border-t shadow-lg" id="mobileMenu">
         <nav class="container mx-auto px-4 py-4 flex flex-col gap-4">
-            <a href="{{ route('landing') }}#hero"
+            <a href="{{ route('landing') }}"
                 class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">Home</a>
-            <a href="{{ route('landing') }}#about"
-                class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">About
-                Us</a>
-            <a href="{{ route('landing') }}#riders"
-                class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">Riders
-                Story</a>
-            <a href="{{ route('landing') }}#gallery"
-                class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">Gallery</a>
+            <a href="{{ route('event-guide') }}"
+                class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">Event
+                Guide</a>
+            <a href="{{ route('layanan-kami') }}"
+                class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">Layanan
+                Kami</a>
+            <a href="{{ route('hubungi-kami') }}"
+                class="text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary transition">Hubungi
+                Kami</a>
             <a href="{{ route('form.login') }}"
                 class="inline-flex items-center justify-center px-6 py-2 rounded-xl border border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-roboto text-lg transition-colors duration-200 mt-2">
                 Masuk
@@ -50,46 +52,20 @@
     </div>
 
     <script>
-        // Mobile menu toggle
+        // mobile menu toggle
         document.getElementById('mobileMenuToggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Smooth scroll for anchor links
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href*="#"]');
+        // close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuToggle = document.getElementById('mobileMenuToggle');
 
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    const currentPage = window.location.pathname;
-
-                    // If link contains # and we're on the same page
-                    if (href.includes('#')) {
-                        const [page, section] = href.split('#');
-
-                        // If we're already on the target page or it's same page
-                        if (!page || currentPage === page || (page === '{{ route('landing') }}' &&
-                                currentPage === '/')) {
-                            e.preventDefault();
-                            const targetElement = document.getElementById(section);
-                            if (targetElement) {
-                                const headerHeight = 96; // h-24 = 96px
-                                const targetPosition = targetElement.offsetTop - headerHeight;
-
-                                window.scrollTo({
-                                    top: targetPosition,
-                                    behavior: 'smooth'
-                                });
-
-                                // Close mobile menu if open
-                                document.getElementById('mobileMenu').classList.add('hidden');
-                            }
-                        }
-                    }
-                });
-            });
+            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     </script>
 </header>
