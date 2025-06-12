@@ -9,6 +9,19 @@
 @section('no-scroll-button', true)
 
 @section('content')
+    <div class="fixed top-6 left-6 z-50">
+        <nav aria-label="Navigation">
+            <a href="{{ App\Helpers\NavigationHelper::getBackButtonUrl() }}"
+                class="group inline-flex items-center justify-center w-12 h-12 bg-jamselinas-primary rounded-xl shadow-md hover:shadow-lg hover:bg-jamselinas-secondary transition-all duration-300 transform hover:scale-105"
+                aria-label="Kembali ke halaman sebelumnya">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-x-0.5">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </nav>
+    </div>
     <div class="flex items-center justify-center min-h-screen p-4">
         <div class="w-full max-w-lg">
             <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-8 space-y-8">
@@ -39,7 +52,7 @@
                                 </div>
                             </div>
                             <input type="email" id="email" name="email"
-                                class="w-full pl-20 pr-4 py-4 text-lg bg-gray-50 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:border-transparent transition-all duration-200 placeholder-gray-400"
+                                class="w-full pl-20 pr-4 py-4 text-lg bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:border-transparent transition-all duration-200 placeholder-gray-400"
                                 placeholder="Masukkan Email" required />
                         </div>
                         @error('email')
@@ -62,7 +75,7 @@
                                 </div>
                             </div>
                             <input type="password" id="password" name="password"
-                                class="w-full pl-20 pr-12 py-4 text-lg bg-gray-50 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:border-transparent transition-all duration-200 placeholder-gray-400"
+                                class="w-full pl-20 pr-12 py-4 text-lg bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:border-transparent transition-all duration-200 placeholder-gray-400"
                                 placeholder="Masukkan Password" required />
                             <button type="button"
                                 class="password-toggle absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-gray-600 transition-colors duration-200"
@@ -82,7 +95,7 @@
 
                     <!-- submit button -->
                     <button type="submit" id="submitBtn"
-                        class="w-full bg-jamselinas-primary hover:bg-jamselinas-secondary text-white font-medium text-lg py-4 rounded-2xl transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2">
+                        class="w-full text-white font-medium text-lg py-4  bg-jamselinas-secondary border-2 border-jamselinas-secondary rounded-lg transition-all duration-200 shadow-lg hover:bg-white hover:text-jamselinas-secondary hover:border-jamseltext-jamselinas-secondary focus:bg-white focus:text-jamselinas-secondary focus:border-jamseltext-jamselinas-secondary focus:outline-none focus:ring-4 focus:ring-jamseltext-jamselinas-secondary focus:ring-offset-2 cursor-pointer flex items-center justify-center space-x-2">
                         <span class="button-text">Masuk</span>
                         <div class="loading-spinner hidden">
                             <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">

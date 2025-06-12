@@ -2,7 +2,7 @@
     <div class="container mx-auto flex items-center justify-between h-20 px-4">
         <!-- back button -->
         <nav aria-label="Navigation">
-            <a href="{{ url()->previous() }}"
+            <a href="{{ App\Helpers\NavigationHelper::getBackButtonUrl() }}"
                 class="group inline-flex items-center justify-center w-12 h-12 bg-jamselinas-primary rounded-xl shadow-md hover:shadow-lg hover:bg-jamselinas-secondary transition-all duration-300 transform hover:scale-105"
                 aria-label="Kembali ke halaman sebelumnya">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
