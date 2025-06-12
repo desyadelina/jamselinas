@@ -55,10 +55,10 @@
     </button>
 
     <script>
-        // Scroll to Top functionality
+        // scroll to top functionality
         const scrollToTopBtn = document.getElementById('scrollToTop');
 
-        // Show/hide button based on scroll position
+        // show/hide button based on posisi scroll
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 scrollToTopBtn.classList.remove('opacity-0', 'invisible');
@@ -69,7 +69,7 @@
             }
         });
 
-        // Smooth scroll to top when button is clicked
+        // smooth scroll to top when button is clicked
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
