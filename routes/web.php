@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pendaftaran;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.landing.index');
 });
+Route::get('/pendaftaran', [Pendaftaran::class, 'index'])->name('form.pendaftaran');

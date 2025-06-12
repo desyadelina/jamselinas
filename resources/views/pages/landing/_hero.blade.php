@@ -6,8 +6,12 @@
         <div class="flex-1 flex flex-col gap-6 text-center lg:text-left">
             <h1 class="font-bold font-inter text-3xl lg:text-5xl text-jamselinas-secondary leading-tight">Nikmati Sensasi bersepeda
                 bersama JAMSELINAS!</h1>
-            <button
-                class="w-full max-w-xs mx-auto lg:mx-0 h-14 bg-jamselinas-secondary hover:bg-jamselinas-secondary/90 text-white font-roboto text-xl rounded-xl shadow transition">Daftar</button>
+            <a href="{{ route('form.pendaftaran') }}">
+                <button
+                    class="w-full max-w-xs mx-auto lg:mx-0 h-14 bg-jamselinas-secondary hover:bg-jamselinas-secondary/90 text-white font-roboto text-xl rounded-xl shadow transition">
+                    Daftar
+                </button>
+            </a>
         </div>
         <div class="flex-1 flex justify-center">
             <div class="w-[865px] flex items-center justify-center">

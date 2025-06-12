@@ -29,12 +29,20 @@
     </style>
 </head>
 
-<body class="bg-jamselinas-white font-inter text-jamselinas-text">
-    @include('layouts._navbar')
-    <main class="mt-16 mb-16">
+<body class="@yield('body-class', 'bg-jamselinas-white') font-inter text-jamselinas-text">
+    @if (View::hasSection('navbar'))
+        @yield('navbar')
+    @else
+        @include('layouts._navbar')
+    @endif
+
+    <main class="@yield('main-class', 'mt-16 mb-16')">
         @yield('content')
     </main>
-    @include('layouts._footer')
+
+    @if (!View::hasSection('no-footer'))
+        @include('layouts._footer')
+    @endif
 </body>
 
 </html>
