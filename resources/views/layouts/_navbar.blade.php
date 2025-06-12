@@ -9,7 +9,7 @@
         <!-- desktop nav -->
         <nav class="hidden lg:flex gap-16 items-center">
             <a href="{{ route('landing') }}"
-                class="nav-link relative text-jamselinas-primary font-roboto text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
+                class="nav-link relative text-jamselinas-primary font-inter text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
                 data-route="landing">
                 Home
                 <div
@@ -18,7 +18,7 @@
             </a>
 
             <a href="{{ route('event-guide') }}"
-                class="nav-link relative text-jamselinas-primary font-roboto text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
+                class="nav-link relative text-jamselinas-primary font-inter text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
                 data-route="event-guide">
                 Event Guide
                 <div
@@ -27,7 +27,7 @@
             </a>
 
             <a href="{{ route('layanan-kami') }}"
-                class="nav-link relative text-jamselinas-primary font-roboto text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
+                class="nav-link relative text-jamselinas-primary font-inter text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
                 data-route="layanan-kami">
                 Layanan Kami
                 <div
@@ -36,7 +36,7 @@
             </a>
 
             <a href="{{ route('hubungi-kami') }}"
-                class="nav-link relative text-jamselinas-primary font-roboto text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
+                class="nav-link relative text-jamselinas-primary font-inter text-[28px] hover:text-jamselinas-secondary transition-all duration-300 group"
                 data-route="hubungi-kami">
                 Hubungi Kami
                 <div
@@ -47,7 +47,7 @@
 
         <!-- login button -->
         <a href="{{ route('form.login') }}"
-            class="hidden lg:flex items-center px-6 py-2 rounded-xl border-2 border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-roboto text-[24px] transition-all duration-300 hover:shadow-lg transform hover:scale-105">
+            class="hidden lg:flex items-center px-6 py-2 rounded-xl border-2 border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-inter text-[24px] transition-all duration-300 hover:shadow-lg transform hover:scale-105">
             Masuk
         </a>
 
@@ -66,7 +66,7 @@
         id="mobileMenu">
         <nav class="container mx-auto px-4 py-6 flex flex-col gap-2">
             <a href="{{ route('landing') }}"
-                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-inter text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
                 data-route="landing">
                 <div class="w-2 h-2 bg-jamselinas-secondary rounded-full opacity-0 scale-0 transition-all duration-300">
                 </div>
@@ -74,7 +74,7 @@
             </a>
 
             <a href="{{ route('event-guide') }}"
-                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-inter text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
                 data-route="event-guide">
                 <div class="w-2 h-2 bg-jamselinas-secondary rounded-full opacity-0 scale-0 transition-all duration-300">
                 </div>
@@ -82,7 +82,7 @@
             </a>
 
             <a href="{{ route('layanan-kami') }}"
-                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-inter text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
                 data-route="layanan-kami">
                 <div class="w-2 h-2 bg-jamselinas-secondary rounded-full opacity-0 scale-0 transition-all duration-300">
                 </div>
@@ -90,7 +90,7 @@
             </a>
 
             <a href="{{ route('hubungi-kami') }}"
-                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-roboto text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
+                class="mobile-nav-link flex items-center gap-3 px-4 py-3 text-jamselinas-primary font-inter text-xl hover:text-jamselinas-secondary hover:bg-gray-50 rounded-lg transition-all duration-300 transform hover:translate-x-2"
                 data-route="hubungi-kami">
                 <div class="w-2 h-2 bg-jamselinas-secondary rounded-full opacity-0 scale-0 transition-all duration-300">
                 </div>
@@ -98,7 +98,7 @@
             </a>
 
             <a href="{{ route('form.login') }}"
-                class="inline-flex items-center justify-center px-6 py-2 mt-4 rounded-xl border-2 border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-roboto text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105">
+                class="inline-flex items-center justify-center px-6 py-2 mt-4 rounded-xl border-2 border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-inter text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105">
                 Masuk
             </a>
         </nav>
