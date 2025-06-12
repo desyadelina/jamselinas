@@ -5,7 +5,7 @@
                 class="w-[308.17px] object-contain rounded-lg mb-4">
             <p class="text-black text-center lg:text-left max-w-xs">
                 <span class="font-normal text-[16px]">Banjarmasin Tuan Rumah </span>
-                <span class="font-bold text-[18px]">JAMSELINAS IX 2025</span>
+                <span class="font-bold text-[18px]">JAMSELINAS XIV 2025</span>
                 <span class="font-normal text-[16px]">: Festival Sepeda Lipat Terbesar di Indonesia</span>
             </p>
         </div>
