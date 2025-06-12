@@ -25,6 +25,10 @@ Route::get('/', function () {
 Route::get('/login', [Auth::class, 'index'])->name('form.login');
 Route::get('/pendaftaran', [Pendaftaran::class, 'index'])->name('form.pendaftaran');
 
+Route::get('/pendaftaran/invoice', function () {
+    return view('pages.transaksi.invoice');
+})->name('pendaftaran.invoice');
+
 Route::get('/event-guide', [EventGuide::class, 'index'])->name('event-guide');
 Route::get('/layanan-kami', [LayananKami::class, 'index'])->name('layanan-kami');
 Route::get('/hubungi-kami', [HubungiKami::class, 'index'])->name('hubungi-kami');

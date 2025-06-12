@@ -28,7 +28,7 @@
                 <div class="text-center">
                     <img src="{{ asset('images/small_logo.png') }}" alt="JAMSELINAS Logo"
                         class="w-50 h-auto mx-auto mb-6 object-contain" />
-                    <h1 class="text-2xl font-semibold text-gray-900 font-poppins">
+                    <h1 class="text-2xl font-semibold text-gray-900 font-inter">
                         Selamat datang kembali!
                     </h1>
                 </div>
@@ -114,7 +114,7 @@
                     <p class="text-gray-600">
                         Belum punya akun?
                         <a href="{{ route('form.pendaftaran') }}"
-                            class="font-semibold text-jamselinas-primary hover:text-jamselinas-secondary transition-colors duration-200 focus:outline-none focus:underline">
+                            class="font-semibold text-jamselinas-primary hover:text-jamselinas-secondary transition-colors duration-200 focus:outline-none relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-jamselinas-secondary after:transition-all after:duration-300 hover:after:w-full after:rounded-full">
                             Daftar sekarang
                         </a>
                     </p>
