@@ -52,8 +52,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                     <p class="text-sm text-blue-700">
-                        Setelah memilih metode pembayaran, Anda akan diarahkan ke halaman konfirmasi untuk menyelesaikan
-                        transaksi.
+                        Setelah memilih metode pembayaran, Anda akan diarahkan ke halaman QR Code dari metode pembayaran yang dipilih.
                     </p>
                 </div>
             </div>
