@@ -8,7 +8,7 @@
                 bersama JAMSELINAS!</h1>
             <a href="{{ route('form.pendaftaran') }}">
                 <button
-                    class="w-full max-w-xs mx-auto lg:mx-0 h-14 bg-jamselinas-secondary hover:bg-jamselinas-secondary/90 text-white font-roboto text-xl rounded-xl shadow transition">
+                    class="w-full max-w-xs mx-auto lg:mx-0 h-14 bg-jamselinas-secondary hover:bg-jamselinas-secondary/90 text-white font-roboto text-xl rounded-xl shadow transition cursor-pointer">
                     Daftar
                 </button>
             </a>
