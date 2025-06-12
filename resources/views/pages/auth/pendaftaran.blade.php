@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Form Pendaftaran - JAMSELINAS 2025')
+@section('title', 'Form Pendaftaran - JAMSELINAS XIV 2025')
 
 @section('body-class', 'bg-neutral-100')
 
@@ -17,7 +17,7 @@
             <!-- form header -->
             <header class="mb-10 text-center">
                 <h1 class="text-4xl md:text-5xl font-semibold text-black mb-2">Form Pendaftaran</h1>
-                <p class="text-lg text-gray-600">JAMSELINAS 2025 - Banjarmasin</p>
+                <p class="text-lg text-gray-600">JAMSELINAS XIV 2025 - Banjarmasin</p>
             </header>
 
             <!-- pendaftaran form -->
@@ -447,7 +447,7 @@
                         Saya telah membaca dan menyetujui
                         <a href="#" class="text-sky-600 underline hover:text-sky-700 font-medium">Syarat dan
                             Ketentuan</a>
-                        JAMSELINAS 2025. <span class="text-red-500">*</span>
+                        JAMSELINAS XIV 2025. <span class="text-red-500">*</span>
                     </label>
                 </div>
 
