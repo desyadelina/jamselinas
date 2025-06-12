@@ -1,4 +1,4 @@
-<section class="bg-gradient-to-b from-jamselinas-gradient-mid to-jamselinas-white py-16">
+<section id="about" class="bg-gradient-to-b from-jamselinas-gradient-mid to-jamselinas-white py-16">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="font-bold font-poppins text-3xl lg:text-5xl text-jamselinas-primary mb-8">ABOUT US</h2>

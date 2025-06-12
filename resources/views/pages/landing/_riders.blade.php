@@ -1,4 +1,4 @@
-<section class="container mx-auto py-16 px-4">
+<section id="riders" class="container mx-auto py-16 px-4">
     <div class="text-center mb-8 lg:mb-12">
         <h2 class="font-bold font-poppins text-3xl lg:text-5xl text-jamselinas-primary">RIDERS STORY</h2>
     </div>

@@ -1,4 +1,4 @@
-<section
+<section id="hero"
     class="relative w-full min-h-[600px] lg:h-[968px] bg-gradient-to-b from-jamselinas-gradient-start to-jamselinas-gradient-mid flex items-center overflow-hidden">
     <img src="{{ asset('images/hero_bg.png') }}" alt=""
         class="absolute left-0 z-0 pointer-events-none select-none w-[842px] max-w-none" />
