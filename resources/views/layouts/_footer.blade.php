@@ -8,7 +8,6 @@
                     <span class="font-normal text-[16px]">Banjarmasin Tuan Rumah </span><span
                         class="font-bold text-[18px]">JAMSELINAS XIV 2025</span><span
                         class="font-normal text-[16px]">:</span>
-                    <br>
                     <span class="font-normal text-[16px]">Festival Sepeda Lipat Terbesar di Indonesia</span>
                 </p>
             </div>
