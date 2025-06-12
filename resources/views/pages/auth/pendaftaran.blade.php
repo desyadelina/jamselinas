@@ -48,6 +48,24 @@
                     @enderror
                 </div>
 
+                <!-- NIK field -->
+                <div>
+                    <label for="nik" class="block mb-2 text-xl font-medium text-black">
+                        NIK (Nomor Induk Kependudukan) <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" id="nik" name="nik" required maxlength="16" pattern="[0-9]{16}"
+                        placeholder="1234567890123456"
+                        class="w-full px-4 py-3 text-lg bg-white border-2 border-sky-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500" />
+                    <div class="mt-1 flex justify-between items-center">
+                        <p class="text-sm text-gray-600">Masukkan 16 digit NIK</p>
+                        <span id="nik-counter" class="text-sm text-gray-500">0/16</span>
+                    </div>
+                    <p id="nik-error" class="mt-1 text-sm text-red-600 hidden">NIK harus terdiri dari 16 digit angka</p>
+                    @error('nik')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <!-- password fields -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
@@ -456,25 +474,85 @@
     </div>
 
     <script>
-        document.getElementById('apply-voucher').addEventListener('click', function() {
-            const voucher = document.getElementById('voucher').value;
-            if (voucher) {
-                // logic validation buat voucher
-                console.log('Applying voucher:', voucher);
-                // ...
-            }
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const nikInput = document.getElementById('nik');
+            const nikCounter = document.getElementById('nik-counter');
+            const nikError = document.getElementById('nik-error');
 
-        // form validation
-        document.querySelector('form').addEventListener('submit', function(e) {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('password_confirmation').value;
+            // NIK validation sama counter
+            nikInput.addEventListener('input', function(e) {
+                // only allow numbers
+                let value = e.target.value.replace(/[^0-9]/g, '');
 
-            if (password !== confirmPassword) {
-                e.preventDefault();
-                alert('Password dan konfirmasi password tidak cocok!');
-                return false;
-            }
+                // limit cuma 16 characters
+                if (value.length > 16) {
+                    value = value.slice(0, 16);
+                }
+
+                e.target.value = value;
+                nikCounter.textContent = `${value.length}/16`;
+
+                // update counter color
+                if (value.length === 16) {
+                    nikCounter.classList.remove('text-gray-500', 'text-red-500');
+                    nikCounter.classList.add('text-green-500');
+                } else if (value.length > 0) {
+                    nikCounter.classList.remove('text-gray-500', 'text-green-500');
+                    nikCounter.classList.add('text-red-500');
+                } else {
+                    nikCounter.classList.remove('text-red-500', 'text-green-500');
+                    nikCounter.classList.add('text-gray-500');
+                }
+
+                // show/hide error message
+                if (value.length > 0 && value.length !== 16) {
+                    nikError.classList.remove('hidden');
+                    nikInput.classList.remove('border-sky-600');
+                    nikInput.classList.add('border-red-500');
+                } else {
+                    nikError.classList.add('hidden');
+                    nikInput.classList.remove('border-red-500');
+                    nikInput.classList.add('border-sky-600');
+                }
+            });
+
+            // prevent non numeric input
+            nikInput.addEventListener('keypress', function(e) {
+                if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Delete' && e.key !==
+                    'Tab' && e.key !== 'Enter') {
+                    e.preventDefault();
+                }
+            });
+
+            // applu voucher functionality
+            document.getElementById('apply-voucher').addEventListener('click', function() {
+                const voucher = document.getElementById('voucher').value;
+                if (voucher) {
+                    console.log('Applying voucher:', voucher);
+                }
+            });
+
+            // form validation
+            document.querySelector('form').addEventListener('submit', function(e) {
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('password_confirmation').value;
+                const nik = document.getElementById('nik').value;
+
+                // pass validation
+                if (password !== confirmPassword) {
+                    e.preventDefault();
+                    alert('Password dan konfirmasi password tidak cocok!');
+                    return false;
+                }
+
+                // NIK validation
+                if (nik.length !== 16 || !/^[0-9]{16}$/.test(nik)) {
+                    e.preventDefault();
+                    alert('NIK harus terdiri dari 16 digit angka!');
+                    nikInput.focus();
+                    return false;
+                }
+            });
         });
     </script>
 @endsection
