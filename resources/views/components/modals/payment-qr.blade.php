@@ -3,8 +3,8 @@
     <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0"
         id="qrModalContent">
         <div class="text-center p-6 border-b border-gray-100">
-            <h1 class="text-xl font-bold text-jamselinas-text mb-2">Pembayaran Bank Kalsel</h1>
-            <p class="text-sm text-gray-600">Scan QR Code untuk pembayaran</p>
+            <h1 class="text-xl font-bold text-jamselinas-text mb-2">Pendaftaran Berhasil!</h1>
+            <p class="text-sm text-gray-600">Silahkan lanjut untuk mendapatkan nomor registrasi!</p>
         </div>
 
         <div class="p-6">
