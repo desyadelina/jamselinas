@@ -1,4 +1,3 @@
-{{-- filepath: d:\codespace\FREELANCE\jamselinas2025\resources\views\errors\404.blade.php --}}
 @extends('layouts.app')
 
 @section('title', '404 - Halaman Tidak Ditemukan | JAMSELINAS XIV 2025')

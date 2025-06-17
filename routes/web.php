@@ -33,6 +33,18 @@ Route::get('/event-guide', [EventGuide::class, 'index'])->name('event-guide');
 Route::get('/layanan-kami', [LayananKami::class, 'index'])->name('layanan-kami');
 Route::get('/hubungi-kami', [HubungiKami::class, 'index'])->name('hubungi-kami');
 
+// admin routes
+Route::prefix('admin')->group(function () {
+
+    Route::get('/', function () {
+        return view('pages.admin.index');
+    })->name('admin.dashboard');
+
+    Route::get('/peserta-kolektif', function () {
+        return view('pages.admin.peserta-kolektif.index');
+    })->name('admin.peserta-kolektif');
+    
+});
 
 
 // ini fallback route buat ngecatch semua route yang tidak ditemukan
