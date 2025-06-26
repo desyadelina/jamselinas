@@ -129,7 +129,7 @@
 
                     <!-- search -->
                     <div class="relative">
-                        <input type="text" id="searchInput" placeholder="Cari peserta, komunitas, nik..."
+                        <input type="text" id="searchInput" placeholder="Cari Peserta, Komunitas, NIK..."
                             class="pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-jamselinas-secondary focus:border-jamselinas-secondary w-full sm:w-64 text-sm">
                         <svg class="absolute left-3 top-3 w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
