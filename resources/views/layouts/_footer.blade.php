@@ -32,7 +32,7 @@
                 <h3 class="font-bold text-[28px] text-black mb-4 mt-8">Event Features</h3>
                 <div class="flex flex-col gap-2 text-[22px]">
                     <ul class="list-disc list-inside text-black">
-                        <li><a href="#" class="text-black hover:text-jamselinas-primary">Route Map</a></li>
+                        <li><a href="{{ route('event-guide') }}?modal=route-map" class="text-black hover:text-jamselinas-primary">Route Map</a></li>
                         <li><a href="#" class="text-black hover:text-jamselinas-primary">Merchandise</a></li>
                         <li><a href="#" class="text-black hover:text-jamselinas-primary">Photo Gallery</a></li>
                     </ul>

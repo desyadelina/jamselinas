@@ -19,8 +19,9 @@
         <div class="flex-1 overflow-y-auto">
             <div class="relative bg-white p-4">
                 <div id="routeMapContainer" class="rounded-lg overflow-hidden" style="height: 500px;">
-                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1g0sFGrJcSU7zPQOYTQE2W6GxWuFBD3Q&ehbc=2E312F&noprof=1" width="100%"
-                        height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    <iframe
+                        src="https://www.google.com/maps/d/u/0/embed?mid=1g0sFGrJcSU7zPQOYTQE2W6GxWuFBD3Q&ehbc=2E312F&noprof=1"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
@@ -122,6 +123,11 @@
 
         // disable body scroll
         document.body.style.overflow = 'hidden';
+
+        // update URL without reloading page
+        const url = new URL(window.location);
+        url.searchParams.set('modal', 'route-map');
+        window.history.pushState({}, '', url);
     }
 
     function closeRouteMapModal() {
@@ -138,12 +144,32 @@
 
         // re-enable body scroll
         document.body.style.overflow = 'auto';
+
+        // remove modal parameter from URL
+        const url = new URL(window.location);
+        url.searchParams.delete('modal');
+        window.history.pushState({}, '', url);
     }
 
     function openFullMap() {
         // open My Maps in new window
-        window.open('https://www.google.com/maps/d/u/0/viewer?mid=1g0sFGrJcSU7zPQOYTQE2W6GxWuFBD3Q&ll=-3.317939708783408%2C114.59769159999998&z=16', '_blank');
+        window.open(
+            'https://www.google.com/maps/d/u/0/viewer?mid=1g0sFGrJcSU7zPQOYTQE2W6GxWuFBD3Q&ll=-3.317939708783408%2C114.59769159999998&z=16',
+            '_blank');
     }
+
+    // check for modal parameter on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modalParam = urlParams.get('modal');
+
+        if (modalParam === 'route-map') {
+            // delay modal opening to ensure DOM is ready
+            setTimeout(() => {
+                openRouteMapModal();
+            }, 100);
+        }
+    });
 
     // close modal when clicking outside
     document.addEventListener('click', function(event) {
@@ -157,6 +183,20 @@
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeRouteMapModal();
+        }
+    });
+
+    // handle browser back/forward buttons
+    window.addEventListener('popstate', function(event) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modalParam = urlParams.get('modal');
+
+        if (modalParam !== 'route-map') {
+            // close modal if modal parameter is not present
+            const modal = document.getElementById('routeMapModal');
+            if (modal && !modal.classList.contains('hidden')) {
+                closeRouteMapModal();
+            }
         }
     });
 </script>
