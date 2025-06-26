@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-[420px_1fr_1fr_1fr] gap-8 mb-8">
             <div class="flex flex-col items-center lg:items-start">
-                <img src="{{ asset('images/large_nobg_logo.png') }}" alt="JAMSELINAS Logo"
+                <img src="{{ asset('images/new_logo.png') }}" alt="JAMSELINAS Logo"
                     class="w-[308.17px] object-contain rounded-lg mb-4 mx-auto block">
                 <p class="text-black text-center lg:text-left">
                     <span class="font-normal text-[16px]">Banjarmasin Tuan Rumah </span><span

@@ -27,7 +27,7 @@
             <!-- header + logo -->
             <header class="flex items-center justify-center mb-8">
                 <div class="flex items-center gap-4">
-                    <img src="{{ asset('images/large_nobg_logo.png') }}" alt="JAMSELINAS Header"
+                    <img src="{{ asset('images/new_logo.png') }}" alt="JAMSELINAS Header"
                         class="w-[300px] object-contain" />
                 </div>
             </header>

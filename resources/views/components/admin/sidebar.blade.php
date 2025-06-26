@@ -18,8 +18,8 @@
         <!-- header section -->
         <header class="flex items-center px-4 py-6 border-b border-jamselinas-gradient-mid/30">
             <div class="flex items-center space-x-3">
-                <img src="{{ asset('images/small_nobg_logo.png') }}" alt="Jamselinas Logo"
-                    class="w-23 h-23 object-contain flex-shrink-0" />
+                <img src="{{ asset('images/new_logo.png') }}" alt="Jamselinas Logo"
+                    class="w-26 h-26 object-contain flex-shrink-0" />
                 <div class="flex flex-col">
                     <h1 class="text-lg font-semibold text-jamselinas-text font-poppins">Jamselinas</h1>
                     <p class="text-sm text-jamselinas-secondary font-inter">Banjarmasin</p>

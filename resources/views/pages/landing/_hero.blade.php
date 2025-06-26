@@ -16,7 +16,7 @@
         </div>
         <div class="hidden lg:flex flex-1 justify-center">
             <div class="w-[865px] flex items-center justify-center">
-                <img src="{{ asset('images/large_nobg_logo.png') }}" alt="JAMSELINAS Logo"
+                <img src="{{ asset('images/new_logo.png') }}" alt="JAMSELINAS Logo"
                     class="max-h-full max-w-full object-contain" />
             </div>
         </div>

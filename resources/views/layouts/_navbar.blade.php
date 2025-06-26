@@ -2,7 +2,7 @@
     <div class="container mx-auto flex items-center justify-between h-24 px-4">
         <div class="flex items-center">
             <a href="{{ route('landing') }}" class="transform hover:scale-105 transition-transform duration-200">
-                <img src="{{ asset('images/small_logo.png') }}" alt="Jamselinas Logo" class="w-26 object-contain" />
+                <img src="{{ asset('images/new_logo.png') }}" alt="Jamselinas Logo" class="w-26 object-contain" />
             </a>
         </div>
 

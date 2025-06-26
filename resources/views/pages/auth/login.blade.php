@@ -26,7 +26,7 @@
         <div class="w-full max-w-lg">
             <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-8 space-y-8">
                 <div class="text-center">
-                    <img src="{{ asset('images/small_logo.png') }}" alt="JAMSELINAS Logo"
+                    <img src="{{ asset('images/new_logo.png') }}" alt="JAMSELINAS Logo"
                         class="w-50 h-auto mx-auto mb-6 object-contain" />
                     <h1 class="text-2xl font-semibold text-gray-900 font-inter">
                         Selamat datang kembali!

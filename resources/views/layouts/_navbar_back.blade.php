@@ -15,7 +15,7 @@
 
         <!-- logo -->
         <div class="flex items-center absolute left-1/2 transform -translate-x-1/2">
-            <img src="{{ asset('images/small_logo.png') }}" alt="Jamselinas Logo"
+            <img src="{{ asset('images/new_logo.png') }}" alt="Jamselinas Logo"
                 class="w-23 object-contain" />
         </div>
 
