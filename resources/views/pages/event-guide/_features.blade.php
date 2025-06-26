@@ -17,59 +17,69 @@
                         'icon' => 'route-map',
                         'title' => 'Route Map',
                         'description' => 'Rute wajib bagi seluruh peserta',
+                        'action' => 'openRouteMapModal()',
                     ],
                     [
                         'icon' => 'phone',
                         'title' => 'Nomor Penting',
                         'description' => 'Informasi nomor penting',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'hotel',
                         'title' => 'Hotel',
                         'description' => 'Rekomendasi Hotel bagi peserta',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'homestay',
                         'title' => 'Homestay',
                         'description' => 'Rekomendasi Homestay bagi peserta',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'schedule',
                         'title' => 'Rangkaian Acara',
                         'description' => 'Rangkaian Acara JAMSELINAS XIV 2025',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'rules',
                         'title' => 'Peraturan Wajib',
                         'description' => 'Peraturan wajib bagi seluruh peserta',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'ridepack',
                         'title' => 'Ridepack',
                         'description' => 'Ridepack JAMSELINAS XIV 2025',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'cycling-rules',
                         'title' => 'Aturan Bersepeda',
                         'description' => 'Aturan bersepeda bagi seluruh peserta',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'equipment',
                         'title' => 'Perlengkapan Wajib',
                         'description' => 'Perlengkapan wajib bagi seluruh peserta',
+                        'action' => null,
                     ],
                     [
                         'icon' => 'gala-dinner',
                         'title' => 'Gala Dinner',
                         'description' => 'Aturan gala dinner bagi seluruh peserta',
+                        'action' => null,
                     ],
                 ];
             @endphp
 
             @foreach ($features as $feature)
                 <article class="group">
-                    <div
-                        class="bg-white rounded-xl border-2 border-jamselinas-primary/20 hover:border-jamselinas-primary transition-all duration-300 p-4 lg:p-6 h-full flex flex-col items-center text-center hover:shadow-lg cursor-pointer transform hover:scale-105">
+                    <div class="bg-white rounded-xl border-2 border-jamselinas-primary/20 hover:border-jamselinas-primary transition-all duration-300 p-4 lg:p-6 h-full flex flex-col items-center text-center hover:shadow-lg cursor-pointer transform hover:scale-105"
+                        @if ($feature['action']) onclick="{{ $feature['action'] }}" @endif>
                         <!-- icon container -->
                         <div class="w-16 h-16 lg:w-20 lg:h-20 mb-4 lg:mb-6 flex items-center justify-center">
                             @if ($feature['icon'] === 'route-map')
@@ -129,8 +139,8 @@
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                                 </svg>
                             @elseif($feature['icon'] === 'ridepack')
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-jamselinas-secondary"
-                                    viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="w-full h-full text-jamselinas-secondary" viewBox="0 0 24 24">
                                     <path fill="currentColor"
                                         d="M19 6.5h-3v-1a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3m-9-1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm10 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V13a21.7 21.7 0 0 0 8 1.53A21.8 21.8 0 0 0 20 13Zm0-7.69a19.9 19.9 0 0 1-16 0V9.5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z" />
                                 </svg>
