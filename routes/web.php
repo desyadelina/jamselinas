@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pendaftaran;
 use App\Http\Controllers\Auth;
+use App\Http\Controllers\Profile;
 use App\Http\Controllers\EventGuide;
 use App\Http\Controllers\LayananKami;
 use App\Http\Controllers\HubungiKami;
@@ -24,6 +25,9 @@ Route::get('/', function () {
 
 Route::get('/login', [Auth::class, 'index'])->name('form.login');
 Route::get('/pendaftaran', [Pendaftaran::class, 'index'])->name('form.pendaftaran');
+Route::get('/profile', [Profile::class, 'index'])->name('profile');
+Route::get('/profile/edit', [Profile::class, 'edit'])->name('profile.edit');
+Route::put('/profile', [Profile::class, 'update'])->name('profile.update');
 
 Route::get('/pendaftaran/invoice', function () {
     return view('pages.transaksi.invoice');
@@ -43,7 +47,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/peserta-kolektif', function () {
         return view('pages.admin.peserta-kolektif.index');
     })->name('admin.peserta-kolektif');
-    
 });
 
 
