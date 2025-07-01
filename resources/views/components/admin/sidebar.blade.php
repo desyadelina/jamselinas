@@ -128,7 +128,7 @@
                         <span class="truncate">Peserta Kolektif</span>
                     </a>
 
-                    <a href="#peserta-umum"
+                    <a href="{{ route('admin.peserta-umum') }}"
                         class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 text-jamselinas-text hover:bg-[#bad2df] hover:text-jamselinas-primary"
                         role="menuitem">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
