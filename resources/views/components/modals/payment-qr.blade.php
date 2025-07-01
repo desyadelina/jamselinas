@@ -1,4 +1,3 @@
-<!-- Payment QR Code Modal -->
 <div id="paymentQRModal" class="fixed inset-0 bg-black/10 z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0"
         id="qrModalContent">
@@ -36,10 +35,19 @@
         </div>
 
         <div class="p-6 bg-gray-50 rounded-b-2xl">
-            <button type="button" onclick="closePaymentQRModal()"
-                class="w-full py-3 px-4 bg-jamselinas-secondary text-white font-semibold rounded-xl hover:bg-jamselinas-primary focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:ring-offset-2 transition-colors duration-200">
-                Selesai
-            </button>
+            <!-- updated with two buttons -->
+            <div class="space-y-3">
+                <button type="button" onclick="closePaymentQRModal()"
+                    class="w-full py-3 px-4 bg-jamselinas-secondary text-white font-semibold rounded-xl hover:bg-jamselinas-primary focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:ring-offset-2 transition-colors duration-200">
+                    Selesai
+                </button>
+                
+                <!-- tombol upload bukti pembayaran -->
+                <a href="{{ route('upload.bukti.pembayaran') }}" 
+                   class="w-full py-3 px-4 border-2 border-jamselinas-secondary text-jamselinas-secondary hover:bg-jamselinas-secondary hover:text-white font-semibold rounded-xl transition-colors duration-200 text-center inline-block">
+                    Upload Bukti Pembayaran
+                </a>
+            </div>
 
             <div class="text-center mt-3">
                 <p class="text-xs text-gray-500">Pembayaran akan diverifikasi dalam 1x24 jam</p>

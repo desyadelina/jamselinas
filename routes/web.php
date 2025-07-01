@@ -29,6 +29,12 @@ Route::get('/profile', [Profile::class, 'index'])->name('profile');
 Route::get('/profile/edit', [Profile::class, 'edit'])->name('profile.edit');
 Route::put('/profile', [Profile::class, 'update'])->name('profile.update');
 
+
+// route untuk upload bukti pembayaran
+Route::get('/upload-bukti-pembayaran', function () {
+    return view('pages.transaksi.upload-bukti');
+})->name('upload.bukti.pembayaran');
+
 Route::get('/pendaftaran/invoice', function () {
     return view('pages.transaksi.invoice');
 })->name('pendaftaran.invoice');
@@ -47,6 +53,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/peserta-kolektif', function () {
         return view('pages.admin.peserta-kolektif.index');
     })->name('admin.peserta-kolektif');
+
+    Route::get('/peserta-umum', function () {
+        return view('pages.admin.peserta-umum.index');
+    })->name('admin.peserta-umum');
 });
 
 

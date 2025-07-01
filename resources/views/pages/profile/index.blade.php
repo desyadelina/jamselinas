@@ -26,7 +26,7 @@
             'hubungan_darurat' => 'Istri',
             'komunitas' => 'Sepeda Seli BJM',
             'ukuran_jersey' => 'L',
-            'status' => 'Lunas',
+            'status' => 'Menunggu Verifikasi', // updated status untuk demo
         ];
     @endphp
 
@@ -68,21 +68,14 @@
                             {{ $userData['nama'] }}
                         </h1>
                         <p class="text-lg text-jamselinas-text/70 font-inter mb-1">
-                            {{ $userData['tempat_lahir'] }}, Indonesia
+                            No. Registrasi: {{ $userData['reg'] }}
                         </p>
                         <div
-                            class="flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
-                            <span
-                                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium {{ $userData['status'] === 'Lunas' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
-                                <div
-                                    class="w-2 h-2 rounded-full {{ $userData['status'] === 'Lunas' ? 'bg-green-400' : 'bg-red-400' }} mr-2">
-                                </div>
-                                {{ $userData['status'] }}
-                            </span>
-                            <span class="text-sm text-jamselinas-text/60 font-inter">
-                                No. Registrasi: <span
-                                    class="font-semibold text-jamselinas-primary">{{ $userData['reg'] }}</span>
-                            </span>
+                            class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+                            @if ($userData['status'] === 'Lunas') bg-green-100 text-green-800
+                            @elseif($userData['status'] === 'Menunggu Verifikasi') bg-yellow-100 text-yellow-800
+                            @else bg-red-100 text-red-800 @endif">
+                            {{ $userData['status'] }}
                         </div>
                     </div>
                 </div>
@@ -98,153 +91,83 @@
                             Informasi Pribadi
                         </h2>
                         <button
-                            class="inline-flex items-center px-4 py-2 bg-jamselinas-primary hover:bg-jamselinas-secondary text-white font-semibold text-sm rounded-lg transition-all duration-300 hover:shadow-md transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:ring-offset-2"
+                            class="inline-flex items-center px-4 py-2 bg-jamselinas-primary hover:bg-jamselinas-secondary text-white font-medium rounded-lg transition-colors duration-200"
                             aria-label="Edit personal data">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                             </svg>
-                            Ubah Data
+                            Edit
                         </button>
                     </header>
 
                     <div class="space-y-6">
                         <!-- basic info -->
-                        <div
-                            class="bg-gradient-to-r from-jamselinas-primary/5 to-jamselinas-secondary/5 rounded-xl p-4 border border-jamselinas-primary/20">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Nama
-                                        Lengkap</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['nama'] }}</p>
-                                </div>
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Email</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['email'] }}</p>
-                                </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">Email</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['email'] }}</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">Jenis Kelamin</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['jenis_kelamin'] }}</p>
                             </div>
                         </div>
 
                         <!-- contact info -->
-                        <div
-                            class="bg-gradient-to-r from-jamselinas-primary/5 to-jamselinas-secondary/5 rounded-xl p-4 border border-jamselinas-primary/20">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">WhatsApp</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['no_wa'] }}</p>
-                                </div>
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Kontak
-                                        Darurat ({{ $userData['hubungan_darurat'] ?? 'N/A' }})</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['no_darurat'] }}</p>
-                                </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">No. WhatsApp</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['no_wa'] }}</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">No. Darurat</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['no_darurat'] }}
+                                    ({{ $userData['hubungan_darurat'] }})</p>
                             </div>
                         </div>
 
                         <!-- personal details -->
-                        <div
-                            class="bg-gradient-to-r from-jamselinas-primary/5 to-jamselinas-secondary/5 rounded-xl p-4 border border-jamselinas-primary/20">
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Tempat
-                                        Lahir</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['tempat_lahir'] }}</p>
-                                </div>
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Tanggal
-                                        Lahir</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ date('d M Y', strtotime($userData['tanggal_lahir'])) }}</p>
-                                </div>
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Jenis
-                                        Kelamin</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['jenis_kelamin'] }}</p>
-                                </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">Tempat, Tanggal Lahir</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['tempat_lahir'] }},
+                                    {{ date('d M Y', strtotime($userData['tanggal_lahir'])) }}</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">Golongan Darah</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['gol_darah'] }}</p>
                             </div>
                         </div>
 
                         <!-- keperluan event info -->
-                        <div
-                            class="bg-gradient-to-r from-jamselinas-primary/5 to-jamselinas-secondary/5 rounded-xl p-4 border border-jamselinas-primary/20">
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Golongan
-                                        Darah</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['gol_darah'] }}
-                                    </p>
-                                </div>
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Ukuran
-                                        Jersey</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['ukuran_jersey'] }}</p>
-                                </div>
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">Komunitas</label>
-                                    <p class="text-base font-medium text-jamselinas-text font-inter">
-                                        {{ $userData['komunitas'] }}</p>
-                                </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">Komunitas</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['komunitas'] }}</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-600">Ukuran Jersey</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['ukuran_jersey'] }}</p>
                             </div>
                         </div>
 
                         <!-- address & medical -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div
-                                class="bg-gradient-to-r from-jamselinas-primary/5 to-jamselinas-secondary/5 rounded-xl p-4 border border-jamselinas-primary/20">
-                                <h3 class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">
-                                    Alamat</h3>
-                                <address
-                                    class="text-sm font-medium text-jamselinas-text font-inter not-italic leading-relaxed">
-                                    {{ $userData['alamat'] }}
-                                </address>
+                            <div class="p-4 bg-gray-50 rounded-lg border border-gray-100">
+                                <label class="text-sm font-medium text-gray-600">Alamat</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['alamat'] }}</p>
                             </div>
-                            <div
-                                class="bg-gradient-to-r from-jamselinas-primary/5 to-jamselinas-secondary/5 rounded-xl p-4 border border-jamselinas-primary/20">
-                                <h3 class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">
-                                    Riwayat Kesehatan</h3>
-                                <p class="text-sm font-medium text-jamselinas-text font-inter">
-                                    {{ $userData['penyakit_bawaan'] }}
-                                </p>
+                            <div class="p-4 bg-gray-50 rounded-lg border border-gray-100">
+                                <label class="text-sm font-medium text-gray-600">Riwayat Penyakit</label>
+                                <p class="text-jamselinas-text font-medium">{{ $userData['penyakit_bawaan'] }}</p>
                             </div>
                         </div>
 
                         <!-- NIK -->
-                        <div
-                            class="bg-gradient-to-r from-jamselinas-primary/5 to-jamselinas-secondary/5 rounded-xl p-4 border border-jamselinas-primary/20">
-                            <div class="flex items-center justify-between">
-                                <div class="space-y-1">
-                                    <label
-                                        class="text-xs font-medium text-jamselinas-text/50 uppercase tracking-wide font-inter">NIK
-                                        (Nomor Induk Kependudukan)</label>
-                                    <p class="text-lg font-bold text-jamselinas-primary font-mono tracking-wider">
-                                        {{ $userData['nik'] }}</p>
-                                </div>
-                                <div class="bg-jamselinas-primary/10 p-2 rounded-lg">
-                                    <svg class="w-6 h-6 text-jamselinas-primary" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                    </svg>
-                                </div>
-                            </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-100">
+                            <label class="text-sm font-medium text-gray-600">NIK</label>
+                            <p class="text-jamselinas-text font-medium font-mono">{{ $userData['nik'] }}</p>
                         </div>
                     </div>
                 </section>
@@ -254,40 +177,51 @@
                     aria-labelledby="event-info">
                     <header class="flex justify-between items-center mb-8">
                         <h2 id="event-info" class="text-2xl font-bold text-jamselinas-text font-poppins">
-                            Event Info
+                            Event & Aksi
                         </h2>
                     </header>
 
                     <div class="space-y-8">
                         <!-- event details -->
                         <div class="space-y-6">
-                            <div class="bg-blue-almost-white rounded-xl p-4 border border-jamselinas-primary/20">
-                                <h3 class="text-lg font-semibold text-jamselinas-primary font-poppins mb-2">JAMSELINAS XIV
-                                    2025</h3>
-                                <p class="text-jamselinas-text/70 font-inter">Banjarmasin, Kalimantan Selatan</p>
+                            <div class="p-4 bg-jamselinas-cream rounded-lg border border-jamselinas-primary/20">
+                                <h3 class="text-lg font-semibold text-jamselinas-text mb-2">JAMSELINAS XIV 2025</h3>
+                                <p class="text-jamselinas-text/70 text-sm mb-2">📍 Banjarmasin, Kalimantan Selatan</p>
+                                <p class="text-jamselinas-text/70 text-sm">📅 15-16 Februari 2025</p>
                             </div>
 
-                            <div class="space-y-4">
-                                <div class="space-y-2">
-                                    <label class="text-sm font-medium text-jamselinas-text/60 font-inter">Tanggal
-                                        Event</label>
-                                    <time class="text-lg font-medium text-jamselinas-text font-inter block"
-                                        datetime="2025-08-17">17 Agustus 2025</time>
-                                </div>
-
-                                <div class="space-y-2">
-                                    <label class="text-sm font-medium text-jamselinas-text/60 font-inter">Nomor
-                                        Registrasi</label>
-                                    <p class="text-lg font-bold text-jamselinas-primary font-inter">{{ $userData['reg'] }}
-                                    </p>
+                            <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <h4 class="font-semibold text-jamselinas-text mb-2">Status Pembayaran</h4>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600">Total: Rp 485.000</span>
+                                    <span
+                                        class="px-3 py-1 rounded-full text-xs font-medium
+                                        @if ($userData['status'] === 'Lunas') bg-green-100 text-green-800
+                                        @elseif($userData['status'] === 'Menunggu Verifikasi') bg-yellow-100 text-yellow-800
+                                        @else bg-red-100 text-red-800 @endif">
+                                        {{ $userData['status'] }}
+                                    </span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- action buttons -->
                         <div class="space-y-4">
+                            <!-- upload bukti pembayaran button - conditional berdasarkan status -->
+                            @if ($userData['status'] === 'Menunggu Verifikasi' || $userData['status'] === 'Belum Bayar')
+                                <a href="{{ route('upload.bukti.pembayaran') }}"
+                                    class="w-full inline-flex items-center justify-center px-4 py-3 bg-jamselinas-secondary hover:bg-jamselinas-primary text-white font-medium rounded-lg transition-colors duration-200"
+                                    aria-label="Upload bukti pembayaran">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                    </svg>
+                                    Upload Bukti Pembayaran
+                                </a>
+                            @endif
+
                             <button
-                                class="w-full inline-flex items-center justify-center px-6 py-3 bg-jamselinas-secondary hover:bg-jamselinas-primary text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-jamselinas-secondary focus:ring-offset-2"
+                                class="w-full inline-flex items-center justify-center px-4 py-3 border border-jamselinas-primary text-jamselinas-primary hover:bg-jamselinas-primary hover:text-white font-medium rounded-lg transition-colors duration-200"
                                 aria-label="Download event guide">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -297,17 +231,17 @@
                             </button>
 
                             <button
-                                class="w-full inline-flex items-center justify-center px-6 py-3 border-2 border-jamselinas-primary text-jamselinas-primary hover:bg-jamselinas-primary hover:text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-jamselinas-primary focus:ring-offset-2"
+                                class="w-full inline-flex items-center justify-center px-4 py-3 border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium rounded-lg transition-colors duration-200"
                                 aria-label="Contact support">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                 </svg>
-                                Hubungi Kami
+                                Hubungi Support
                             </button>
 
                             <button
-                                class="w-full inline-flex items-center justify-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2"
+                                class="w-full inline-flex items-center justify-center px-4 py-3 border border-red-300 text-red-700 hover:bg-red-50 font-medium rounded-lg transition-colors duration-200"
                                 aria-label="Logout from account">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -333,7 +267,6 @@
                     tabs.forEach(t => {
                         t.classList.remove('text-jamselinas-primary',
                             'border-jamselinas-secondary');
-                        t.classList.add('text-jamselinas-text/60');
                         t.removeAttribute('aria-current');
                     });
 
@@ -343,7 +276,7 @@
                     this.setAttribute('aria-current', 'page');
 
                     if (this.textContent.trim() === 'Aktivitas') {
-                        console.log('Switch to Activities tab');
+                        console.log('Aktivitas tab clicked - implement aktivitas content');
                     }
                 });
             });
@@ -378,7 +311,7 @@
             document.querySelector('[aria-label="Logout from account"]')?.addEventListener('click', function() {
                 // handle logout
                 if (confirm('Apakah Anda yakin ingin keluar?')) {
-                    // blm, be aja
+                    // redirect to login or landing
                     console.log('Logout confirmed');
                     window.location.href = "{{ route('landing') }}";
                 }
